@@ -1,21 +1,28 @@
-import firebase from "firebase";
+import { initializeApp } from "firebase/app";
+import { getFirestore, getDocs, collection } from "firebase/firestore";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCDZLrYzzEz2hcAYuPENSl-8WC9A5euDr4",
-  authDomain: "linkedin-clone-a8753.firebaseapp.com",
-  projectId: "linkedin-clone-a8753",
-  storageBucket: "linkedin-clone-a8753.appspot.com",
-  messagingSenderId: "344720430158",
-  appId: "1:344720430158:web:343965dfc05e1530831f1f",
-  measurementId: "G-B0KGKK7GCF",
+  apiKey: "AIzaSyDx1fuVhuTj0he-F9AkyvVnWVa6qYFwSwA",
+  authDomain: "unemployment-hackathon.firebaseapp.com",
+  projectId: "unemployment-hackathon",
+  storageBucket: "unemployment-hackathon.appspot.com",
+  messagingSenderId: "867881507684",
+  appId: "1:867881507684:web:1a09f94c3fcc3458f4b871",
+  measurementId: "G-E5L2R8J8YY",
 };
 
-const firebaseApp = firebase.initilizeApp(firebaseConfig);
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
-const storage = firebase.storage();
+initializeApp(firebaseConfig);
+const db = getFirestore();
+//collection references
+const colRef = collection(db, "users");
 
-export { auth, provider, storage };
-export default db;
+//get collection data
+getDocs(colRef).then((snapshot) => {
+  console.log(snapshot.docs);
+});
+// const auth = firebase.auth();
+// const provider = new firebase.auth.GoogleAuthProvider();
+// const storage = firebase.storage();
+
+export { getFirestore, getDocs, collection };
