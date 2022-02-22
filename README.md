@@ -6,3 +6,4 @@ Imports
 - Firebase
 - redux
 - redux-thunk
+- firebase tools
