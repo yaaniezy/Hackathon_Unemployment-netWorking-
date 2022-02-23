@@ -7,3 +7,4 @@ Imports
 - redux
 - redux-thunk
 - firebase tools
+- styled components
