@@ -30,7 +30,7 @@ const Rightside = (props) => {
           </li>
         </FeedList>
         <Recommendation>View all recommendatoins</Recommendation>
-        <imgs src="/images/right-icon.svg" />
+        <img src="/images/right-icon.svg" />
       </FollowCard>
       <BannerCard>
         <img src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg" />
